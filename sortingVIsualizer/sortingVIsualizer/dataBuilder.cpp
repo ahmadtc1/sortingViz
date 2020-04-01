@@ -17,7 +17,7 @@ DataBuilder::DataBuilder(int size) {
     data.resize(size);
     srand(time(0));
     for (auto& element: data) {
-        int value = rand() % 1000;
+        int value = rand() % 1000 + 1;
         element = value;
     }
 }
@@ -37,7 +37,7 @@ void DataBuilder::shuffle() {
 void DataBuilder::randomize() {
     srand(time(0));
     for (auto& elem : data) {
-        int value = rand() % 1000;
+        int value = rand() % 1000 + 1;
         elem = value;
     }
 }

@@ -10,6 +10,7 @@
 		469620D5242E6A6C009EC375 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 469620D4242E6A6C009EC375 /* main.cpp */; };
 		469620DD242E6A85009EC375 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469620DC242E6A85009EC375 /* SDL2.framework */; };
 		469620E1242EA425009EC375 /* dataBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 469620DF242EA425009EC375 /* dataBuilder.cpp */; };
+		46A1ADFA243456F40068EE44 /* Visualizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ADF8243456F40068EE44 /* Visualizer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,8 @@
 		469620DC242E6A85009EC375 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		469620DF242EA425009EC375 /* dataBuilder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dataBuilder.cpp; sourceTree = "<group>"; };
 		469620E0242EA425009EC375 /* dataBuilder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = dataBuilder.hpp; sourceTree = "<group>"; };
+		46A1ADF8243456F40068EE44 /* Visualizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Visualizer.cpp; path = sortingVisualizer/Visualizer.cpp; sourceTree = SOURCE_ROOT; };
+		46A1ADF9243456F40068EE44 /* Visualizer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Visualizer.hpp; path = sortingVisualizer/Visualizer.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				469620D4242E6A6C009EC375 /* main.cpp */,
 				469620DF242EA425009EC375 /* dataBuilder.cpp */,
 				469620E0242EA425009EC375 /* dataBuilder.hpp */,
+				46A1ADF8243456F40068EE44 /* Visualizer.cpp */,
+				46A1ADF9243456F40068EE44 /* Visualizer.hpp */,
 			);
 			path = sortingVIsualizer;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46A1ADFA243456F40068EE44 /* Visualizer.cpp in Sources */,
 				469620D5242E6A6C009EC375 /* main.cpp in Sources */,
 				469620E1242EA425009EC375 /* dataBuilder.cpp in Sources */,
 			);
