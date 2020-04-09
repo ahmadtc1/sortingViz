@@ -5,7 +5,6 @@
 //  Created by Ahmad Chaudhry on 2020-04-01.
 //  Copyright © 2020 Ahmad Chaudhry. All rights reserved.
 //
-
 #ifndef Visualizer_hpp
 #define Visualizer_hpp
 
@@ -13,6 +12,7 @@
 #include <iostream>
 #include <vector>
 #include <SDL2/SDL.h>
+#include "dataBuilder.hpp"
 
 class Visualizer {
 private:
@@ -30,9 +30,9 @@ public:
     
     void render();
     
-    void handleEvents();
+    void handleEvents(std::vector<int>& data);
     
-    void update(std::vector<int> data);
+    void update(std::vector<int>& data);
     
     void clean();
     

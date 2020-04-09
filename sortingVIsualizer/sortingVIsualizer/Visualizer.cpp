@@ -36,10 +36,6 @@ void Visualizer::init(const char *title, int xpos, int ypos, int width, int heig
             SDL_SetRenderDrawColor(renderer, 255, 133, 100, 255);
             
             std::cout << "Renderer Created" << std::endl;
-            
-            SDL_RenderClear(renderer);
-            
-            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
         }
         
         isRunning = true;
@@ -49,7 +45,7 @@ void Visualizer::init(const char *title, int xpos, int ypos, int width, int heig
     }
 }
 
-void Visualizer::handleEvents() {
+void Visualizer::handleEvents(std::vector<int>& data) {
     std::vector<int> a;
     SDL_Event event;
     SDL_PollEvent(&event);
@@ -59,20 +55,25 @@ void Visualizer::handleEvents() {
             break;
             
         case SDL_KEYDOWN:
-            update(a);
+            update(data);
         
         case SDL_KEYUP:
-            update(a);
+            update(data);
             
         default:
-            break;
+            update(data);
     }
 }
 
-void Visualizer::update(std::vector<int> data) {
-    count = count + 1;
-    std::cout << count << std::endl;
-    SDL_RenderDrawLine(renderer, 10, 0, 10, count);
+void Visualizer::update(std::vector<int>& data) {
+    SDL_Surface* s = SDL_CreateRGBSurface(0, 800, 600, 32, 0, 0, 0, 0);
+    SDL_FillRect(s, NULL, SDL_MapRGB(s -> format, 0, 0, 0));
+    
+    for (int i = 0; i < data.size(); ++i) {
+        SDL_RenderDrawLine(renderer, i, 1000, i, data[i]);
+        SDL_RenderPresent(renderer);
+    }
+    
 }
 
 void Visualizer::render() {
