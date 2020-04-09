@@ -10,46 +10,27 @@
 #include <SDL2/SDL.h>
 #include "dataBuilder.hpp";
 #include "Visualizer.hpp";
+#include "Sorting.hpp";
 
 int main() {
     
     DataBuilder data(200);
+    Sorting sorter;
+    
     std::vector<int> d = data.getData();
     
     Visualizer* viz = new Visualizer();
     
     viz -> init("Sorting Viz", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
+    bool sorted = false;
     
     while (viz -> running()) {
-        bool sorted = false;
         //viz -> handleEvents(data.getData());
         if (!sorted) {
-            for (int i = 0; i < d.size(); ++i) {
-                int min = d[i];
-                int minIndex = i;
-                
-                for (int j = i + 1; j < d.size(); ++j) {
-                    if (d[j] < min) {
-                        min = d[j];
-                        minIndex = j;
-                    }
-                }
-                int temp = d[i];
-                d[i] = min;
-                d[minIndex] = temp;
-                
-                viz -> handleEvents(d);
-                viz -> render();
-            }
-            
-            for (int i = 0; i < data.getData().size(); ++i) {
-                std::cout << data.getData()[i] << std::endl;
-            }
+            sorter.bubbleSort(d, viz);
             viz -> render();
-            
             sorted = true;
         }
-        
     }
     
     viz -> clean();
