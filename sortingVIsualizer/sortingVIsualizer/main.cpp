@@ -27,7 +27,14 @@ int main() {
     while (viz -> running()) {
         //viz -> handleEvents(data.getData());
         if (!sorted) {
-            sorter.bubbleSort(d, viz);
+            sorter.mergeSort(d, 0, d.size() - 1, viz);
+            
+            viz -> handleEvents(d);
+            viz -> render();
+            for (int& elem: d) {
+                std::cout << elem << std::endl;
+            }
+            
             viz -> render();
             sorted = true;
         }
@@ -59,7 +66,6 @@ int main() {
     //SDL_RenderPresent(renderer);
     
     
-     /*
      while (sorting) {
         sort the actual data in the array item by item
         Update the graph to represent the step updated data

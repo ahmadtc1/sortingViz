@@ -62,8 +62,53 @@ void Sorting::bubbleSort(std::vector<int>& d, Visualizer* viz) {
         std::cout << d[i] << std::endl;
     }
 }
+
+void Sorting::merge(std::vector<int>& arr, int left, int middle, int right) {
+    int p = left;
+    int q = middle + 1;
     
-void Sorting::mergeSort(std::vector<int>& d, Visualizer* viz) {
+    std::vector<int> a(right-left+1);
+    int k = 0;
     
+    for (int i = left; i <= right; ++i) {
+        if (p > middle) {
+            a[k++] = arr[q++];
+        }
+        
+        else if (q > right) {
+            a[k++] = arr[p++];
+        }
+        
+        else if (arr[p] < arr[q]) {
+            a[k++] = arr[p++];
+        }
+        
+        else {
+            a[k++] = arr[q++];
+        }
+    }
+    
+    for (int p = 0; p < k; p++) {
+        arr[left++] = a[p];
+    }
+    return;
+}
+
+void Sorting::mergeSort(std::vector<int>& d, int l, int r, Visualizer* viz) {\
+    if (l < r) {
+        int m = (l + r) / 2;
+        
+        mergeSort(d, l, m, viz);
+        
+        
+        mergeSort(d, m + 1, r, viz);
+        
+        merge(d, l, m, r);
+        
+        
+        viz -> handleEvents(d);
+        viz -> render();
+    }
+    return;
 }
     

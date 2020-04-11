@@ -26,7 +26,9 @@ public:
     
     void bubbleSort(std::vector<int>& d, Visualizer* viz);
     
-    void mergeSort(std::vector<int>& d, Visualizer* viz);
+    void merge(std::vector<int>& arr, int left, int middle, int right);
+    
+    void mergeSort(std::vector<int>& d, int l, int r, Visualizer* viz);
     
 };
 
