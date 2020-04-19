@@ -4,17 +4,16 @@
 ## Purpose
 I've found sorting algorithms interesting for a while, especially with their large variety and many different possible use cases.
 
-A sorting algorithm visualizer to help students be able to understand and visualize the inner workings of different sorting algorithms
+This is a sorting algorithm visualizer to help students be able to understand and visualize the inner workings of different sorting algorithms
 
 
 ## Technical Details
-This is a **C++** project
 
 ### Graphics
 The GUI for the visualizer was handled using the **SDL Library** to create a cross-platform GUI application
 
 ### Algorithms
-As of right now, I've implemented selection sort, bubble sort, merge sort and insertion sort. I'm constantly in the process of adding visualization for more sorting algorithms when I find some free-time
+As of right now, I've implemented selection sort, bubble sort, merge sort and insertion sort. I'm constantly in the process of adding visualization for more sorting algorithms whenever I find some free-time
 
 
 ### Project Structure
@@ -33,5 +32,3 @@ The various lifecycle portions of the application were handled in a Visualizer c
 ## Future Steps
 I'd like to smooth out the sorting animations more and visualize them better to allow for easier visualization of the actual steps taking place. At the moment I'm trying to find my way with SDL to allow for that to happen, but expect to see it soon.
 
-## Visualize
-Meanwhile, here's a small clip from the visualizer to see an input array being sorted in ascending order using selection sort!
