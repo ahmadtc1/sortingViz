@@ -30,6 +30,12 @@ public:
     
     void mergeSort(std::vector<int>& d, int l, int r, Visualizer* viz);
     
+    void quickSort(std::vector<int>& d, int low, int high, Visualizer* viz);
+    
+    int partition(std::vector<int>&arr, int low, int high);
+    
+    void swap(int* a, int* b);
+    
 };
 
 #endif /* Sorting_hpp */

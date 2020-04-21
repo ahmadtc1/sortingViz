@@ -111,4 +111,34 @@ void Sorting::mergeSort(std::vector<int>& d, int l, int r, Visualizer* viz) {\
     }
     return;
 }
+
+void Sorting::swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void Sorting::quickSort(std::vector<int>& d, int low, int high, Visualizer* viz) {
+    if (low < high) {
+        int pi = partition(d, low, high);
+        quickSort(d, low, pi - 1, viz);
+        quickSort(d, pi + 1, high, viz);
+    }
+}
+
+int Sorting::partition(std::vector<int>&arr, int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+    
+    for (int j = low; j < high; ++j) {
+        if (arr[j] < pivot) {
+            ++i;
+            swap(&arr[j], &arr[i]);
+        }
+    }
+    
+    swap(&pivot, &arr[i + 1]);
+    
+    return i + 1;
+}
     
